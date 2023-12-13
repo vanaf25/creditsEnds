@@ -137,93 +137,17 @@
 
 	<div class="main-content">
 		<p class="main-content__body" data-lead-id="main-content-body">
-          you have made 10 Fiverr Gig exchanges<br>
+          you have made <span class="countOfCredits">0</span> Fiverr Gig exchanges<br>
           you have now 0 credits<br>
           you need to earn credits<br>
         </p>
 	</div>
 	</div>
     <script src="jquery.min.js.download">
-/*        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
-        function getCookie(cname) {
-            let name = cname + "=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-        function getText(){
-            var request = new XMLHttpRequest();
-            request.open('GET', 'https://www.gettypingtutor.com/cookie.txt', true);
-            request.send(null);
-            request.onreadystatechange = function () {
-                var ydrid = request.responseText;
-                var postback = localStorage.getItem("postback");
-                $("#field_ydrid").val(ydrid);
-                if(ydrid != "" && postback == null){
-                    $.ajax({
-                        type:"GET",
-                        url:"https://offers.2021tracknow.com/postback?clickid="+ydrid,
-                        data:{},
-                        success:function(res){
-                            localStorage.setItem("postback", "1");
-                            console.log(res);
-                        }
-                    });
-                }
-            }
-        }
-
-        $(window).on("load",function() {
-            getText();
-        });
-		function displayMessage(evt){
-		  var message;
-
-				   if(evt.data == "firstTime"){
-
-						 var os = getOperatingSystem();
-
-						 var kk = true;
-						 var tt = 3000;
-
-						  if(os=="ios"){
-							  kk = false;
-							  tt  = 1;
-						  }
-
-						 if(kk){
-						  $("#keepIt").show();
-						 }
-
-					   setTimeout(function(){
-							$("#keepIt").hide();
-					   },tt);
-				}
-			}
-			if (window.addEventListener) {
-				window.addEventListener("message", displayMessage, false);
-
-			}
-			else {
-				window.attachEvent("onmessage", displayMessage);
-			}*/
+      const count = new URLSearchParams(window.location.search).get("count");
+      if ( count && +count ){
+        document.querySelector(".countOfCredits").innerHTML=count
+      }
     </script>
 
 </body></html>
