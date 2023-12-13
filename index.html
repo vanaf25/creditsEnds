@@ -145,6 +145,7 @@
 	</div>
     <script src="jquery.min.js.download">
       const count = new URLSearchParams(window.location.search).get("count");
+      console.log('count:',count);
       if ( count && +count ){
         document.querySelector(".countOfCredits").innerHTML=count
       }
